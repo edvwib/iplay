@@ -1,5 +1,5 @@
 # IPLAY
-\[!\[StyleCI\](https://styleci.io/repos/126187901/shield?branch=master)\](https://styleci.io/repos/126187901)
+[![StyleCI](https://styleci.io/repos/126187901/shield?branch=master)](https://styleci.io/repos/126187901)
 
 <hr>
 
