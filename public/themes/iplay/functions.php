@@ -15,6 +15,9 @@ require template_path('includes/plugins/plate.php');
 // Require Advanced Custom Fields
 require template_path('includes/plugins/acf.php');
 
+// Require Soil
+require template_path('includes/plugins/soil.php');
+
 add_action('after_setup_theme', function () {
     if (is_admin()) {
         show_admin_bar(true);
