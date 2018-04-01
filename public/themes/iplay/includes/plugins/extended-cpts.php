@@ -10,5 +10,5 @@
 declare(strict_types=1);
 
 add_action('init', function () {
-    register_extended_post_type('About');
+    require template_path('/post-types/employee.php');
 });

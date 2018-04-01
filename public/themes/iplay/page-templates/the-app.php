@@ -1,4 +1,4 @@
-<?php
+<?php /* Template Name: The App */
 
 /*
  * This file is part of IPLAY.
