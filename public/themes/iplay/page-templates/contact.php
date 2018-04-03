@@ -21,35 +21,6 @@ declare(strict_types=1);
 
             <?php the_content(); ?>
 
-            <div class="employees">
-                <?php
-                $args = [
-                    'numberposts' => 10,
-                    'post_type'   => 'employee'
-                ];
-                $employees = get_posts($args);
-
-                if ($employees) {
-                    foreach ($employees as $employee): ?>
-
-                        <h3 class="employee-name">
-                            <?= $employee->post_title ?>
-                        </h3>
-                        <?php die(var_dump(field('image'))); ?>
-                        <img class="employee-img"
-                            src="<?= $employee->image ?>"
-                            alt="<?= $employee->post_title.' image' ?>"
-                        >
-                        <p class="employee-position">
-                            <?= $employee->position ?>
-                        </p>
-
-                    <?php die(var_dump($employee)); endforeach;
-                }
-                ?>
-            </div> <!-- /Employees -->
-
-
 
         </article>
     <?php endwhile; else: ?>

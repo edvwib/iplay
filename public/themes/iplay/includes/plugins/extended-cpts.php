@@ -10,5 +10,5 @@
 declare(strict_types=1);
 
 add_action('init', function () {
-    require template_path('/post-types/employee.php');
+    //require template_path('/post-types/);
 });
