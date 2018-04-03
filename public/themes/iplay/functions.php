@@ -25,7 +25,35 @@ add_action('after_setup_theme', function () {
     if (is_admin()) {
         show_admin_bar(true);
     }
+
+    // Add title tag theme support.
+    add_theme_support('title-tag');
+
+    // Add HTML5 theme support.
+    add_theme_support('html5', [
+        'caption',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'search-form',
+        'widgets',
+    ]);
 });
+
+add_action('wp_enqueue_scripts', function () {
+    // Load custom CSS and JavaScript
+    //wp_enqueue_style('iplay', mix('assets/styles/iplay.css'));
+    wp_enqueue_style('iplay', '/../themes/iplay/assets/styles/iplay.css');
+    //wp_register_script('iplay', mix('assets/scripts/iplay.js'), '', '', true);
+    wp_register_script('iplay', '/../themes/iplay/assets/scripts/iplay.js', '', '', true);
+    wp_enqueue_script('iplay');
+});
+
+// Remove JPEG compression.
+add_filter('jpeg_quality', function () {
+    return 100;
+}, 10, 2);
+
 
 
 // Remove default post type from WordPress Dashboard

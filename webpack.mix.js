@@ -18,7 +18,7 @@ const theme = process.env.WP_THEME;
 mix.setResourceRoot('../');
 mix.setPublicPath(`public/themes/${theme}/assets`);
 
-mix.js('resources/assets/scripts/app.js', 'scripts');
-mix.sass('resources/assets/styles/app.scss', 'styles');
+mix.js('resources/assets/scripts/iplay.js', 'scripts');
+mix.sass('resources/assets/styles/iplay.scss', 'styles');
 
 mix.version();
