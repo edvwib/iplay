@@ -22,6 +22,13 @@ declare(strict_types=1);
 <body <?php body_class(); ?>>
 
     <header>
+        <div class="logo">
+            <?php $logo = field('logo'); ?>
+            <?php if ($logo): ?>
+                <img src="<?= $logo['sizes']['large']; ?>"
+                alt="<?= $logo['alt'] ?>">
+            <?php endif; ?>
+        </div>
         <nav role="navigation">
             <?php wp_nav_menu(['theme_location' => 'primary-menu']); ?>
         </nav>
