@@ -1154,16 +1154,16 @@
         },
         {
             "name": "wordplate/acf",
-            "version": "5.1.2",
+            "version": "5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wordplate/acf.git",
-                "reference": "6eee3679c010a6ce89acae8dcdafc388f29ca08b"
+                "reference": "8acf493c002d55301a6c106ffae85fd49fd30ffb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wordplate/acf/zipball/6eee3679c010a6ce89acae8dcdafc388f29ca08b",
-                "reference": "6eee3679c010a6ce89acae8dcdafc388f29ca08b",
+                "url": "https://api.github.com/repos/wordplate/acf/zipball/8acf493c002d55301a6c106ffae85fd49fd30ffb",
+                "reference": "8acf493c002d55301a6c106ffae85fd49fd30ffb",
                 "shasum": ""
             },
             "require": {
@@ -1175,7 +1175,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "5.2-dev"
                 }
             },
             "autoload": {
@@ -1211,7 +1211,7 @@
                 "wordplate",
                 "wordpress"
             ],
-            "time": "2018-02-23T10:40:19+00:00"
+            "time": "2018-04-04T12:11:21+00:00"
         },
         {
             "name": "wordplate/framework",
