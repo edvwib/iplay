@@ -9,5 +9,3 @@ npm-debug.log
 Vagrantfile
 vendor
 .php_cs.cache
-composer.lock
-package-lock.json
