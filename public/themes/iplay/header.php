@@ -17,13 +17,12 @@ declare(strict_types=1);
 
   <?php wp_head(); ?>
 
-  <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 </head>
 <body <?php body_class(); ?>>
 
     <header>
         <div class="logo">
-            <?php $logo = field('logo'); ?>
+            <?php $logo = field('app_introduction_logo'); ?>
             <?php if ($logo): ?>
                 <img src="<?= $logo['sizes']['large']; ?>"
                 alt="<?= $logo['alt'] ?>">

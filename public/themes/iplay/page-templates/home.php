@@ -17,24 +17,33 @@ declare(strict_types=1);
         <article>
             <div class="home_intro">
                 <div class="intro_header_container">
+                    <div class="intro_header_logo_container">
+                        <?php
+                            $image = field('app_introduction_title_logo');
+                            ?>
+                            <img class="intro_header_title_logo" src="<?= $image['sizes']['large']; ?>" alt="">
+                    </div>
                     <h1 class="intro_header_main">
-                        <?= the_field('title'); ?>
+                        <?= field('app_introduction_title'); ?>
                     </h1>
                     <h4 class="intro_header_secondary">
-                        <?= the_field('title_secondary'); ?>
+                        <?= field('app_introduction_title_secondary'); ?>
                     </h4>
                 </div>
                 <div class="app_links_container">
                     <div class="appstore_link_container">
-                        <a class="appstore_link" href="<?= the_field('appstore_url'); ?>">APP STORE</a>
+                        <a class="appstore_link" href="<?= field('app_introduction_appstore_url'); ?>">APP STORE</a>
                     </div>
                     <div class="googleplay_link_container">
-                        <a class="googleplay_link" href="<?= the_field('googleplay_url'); ?>">GOOGLE PLAY</a>
+                        <a class="googleplay_link" href="<?= field('app_introduction_googleplay_url'); ?>">GOOGLE PLAY</a>
                     </div>
                 </div>
                 <div class="app_display_container">
                     <div class="app_display_frame">
-                        <img src="app_display_image" alt="">
+                        <?php
+                        $image = field('app_introduction_app_display');
+                        ?>
+                        <img class="app_display_image" src="<?= $image['sizes']['large']; ?>" alt="">
                     </div>
                 </div>
             </div>
