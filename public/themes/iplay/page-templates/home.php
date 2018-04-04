@@ -46,8 +46,69 @@ declare(strict_types=1);
                         <img class="app_display_image" src="<?= $image['sizes']['large']; ?>" alt="">
                     </div>
                 </div>
-            </div>
+            </div><!-- /home_intro -->
 
+
+            <div class="key_points_section_container">
+                <div class="key_points_title_container">
+                    <h1 class="key_points_title">
+                        <?= field('key_features_title') ?>
+                    </h1>
+                </div>
+
+                <?php if (have_rows('key_features_key_points')): ?>
+                    <div class="key_points_container">
+                        <?php while (have_rows('key_features_key_points')): the_row(); ?>
+                            <div class="key_point_container">
+                                <div class="key_point_icon_container">
+                                    <?php $icon = field('icon'); ?>
+                                    <img class="key_point_icon"
+                                        src="<?= $icon['sizes']['large'] ?>"
+                                        alt="<?= $icon['alt'] ?>"
+                                    >
+                                </div>
+                                <div class="key_point_title_container">
+                                    <h3 class="key_point_title">
+                                        <?= field('title') ?>
+                                    </h3>
+                                </div>
+                                <div class="key_point_body_container">
+                                    <p class="key_point_body">
+                                        <?= field('body') ?>
+                                    </p>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
+            </div> <!-- /key_points_section_container -->
+
+
+            <div class="newsletter_container">
+                <div class="title_container">
+                    <h1 class="title">
+                        <?= field('newsletter_title') ?>
+                    </h1>
+                </div>
+                <div class="body_container">
+                    <p class="body">
+                        <?= field('newsletter_body') ?>
+                    </p>
+                </div>
+                <div class="form_container">
+                    <form class="form" action="#" method="post">
+                        <input type="email" name="email" placeholder="Email Address">
+                        <input type="submit" value="Sign Up">
+                    </form>
+                </div>
+                <div class="image_container">
+                    <?php $image = field('newsletter_image'); ?>
+                    <img class="image"
+                        src="<?= $image['sizes']['large']; ?>"
+                        alt="<?php $image['alt']; ?>"
+                    >
+                </div>
+            </div>
 
         </article>
     <?php endwhile; else: ?>

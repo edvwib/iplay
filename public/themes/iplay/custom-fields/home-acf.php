@@ -65,7 +65,70 @@ $homeFields = [
         ],
     ]),
 
-
+    acf_group([
+        'name' => 'key_features',
+        'label' => 'Key features',
+        'sub_fields' => [
+            acf_text([
+                'name' => 'title',
+                'label' => 'Title',
+                'instructions' => 'This title will be displayed above the cards you can enter below.',
+                'required' => false,
+            ]),
+            acf_repeater([
+                'name' => 'key_points',
+                'label' => 'Key points',
+                'sub_fields' => [
+                    acf_image([
+                        'name' => 'icon',
+                        'label' => 'Icon',
+                        'instructions' => 'This icon will be displayed on top of the card.',
+                        'required' => false,
+                        'mime_types' => '.jpg, .jpeg, .png, .svg',
+                        'return_value' => 'object',
+                    ]),
+                    acf_text([
+                        'name' => 'title',
+                        'label' => 'Title',
+                        'instructions' => 'This title will be displayed in the card.',
+                        'required' => false,
+                    ]),
+                    acf_textarea([
+                        'name' => 'body',
+                        'label' => 'Body',
+                        'instructions' => 'This text will be displayed in the card.',
+                        'required' => false,
+                    ]),
+                ]
+            ]),
+        ],
+    ]),
+    acf_group([
+        'name' => 'newsletter',
+        'label' => 'Newsletter',
+        'sub_fields' => [
+            acf_text([
+                'name' => 'title',
+                'label' => 'Title',
+                'instructions' => 'This title will be displayed above the form for the newsletter.',
+                'required' => false,
+            ]),
+            acf_textarea([
+                'name' => 'body',
+                'label' => 'Body',
+                'instructions' => 'This text will be displayed below the title.',
+                'required' => false,
+            ]),
+            acf_image([
+                'name' => 'image',
+                'label' => 'Image',
+                'instructions' => 'This image will be displayed to the right of the form for the newsletter.',
+                'required' => false,
+                'mime_types' => '.jpg, .jpeg, .png, .svg',
+                'return_value' => 'object',
+            ]),
+        ],
+    ]),
 ];
 
 $homeLocation = [
