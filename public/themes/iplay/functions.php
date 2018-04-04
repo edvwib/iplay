@@ -54,6 +54,14 @@ add_filter('jpeg_quality', function () {
     return 100;
 }, 10, 2);
 
+// Enable SVG upload support
+function add_svg_to_upload_mimes($upload_mimes)
+{
+    $upload_mimes['svg'] = 'image/svg+xml';
+    $upload_mimes['svgz'] = 'image/svg+xml';
+    return $upload_mimes;
+}
+add_filter('upload_mimes', 'add_svg_to_upload_mimes', 10, 1);
 
 
 // Remove default post type from WordPress Dashboard
