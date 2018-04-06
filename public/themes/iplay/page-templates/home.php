@@ -20,22 +20,34 @@ declare(strict_types=1);
                     <div class="intro_header_logo_container">
                         <?php
                             $image = field('app_introduction_title_logo');
-                            ?>
-                            <img class="intro_header_title_logo" src="<?= $image['sizes']['large']; ?>" alt="">
+                        ?>
+                        <img class="intro_header_title_logo"
+                            src="<?= $image['sizes']['large']; ?>"
+                            alt="<?= $image['alt']; ?>">
                     </div>
-                    <h1 class="intro_header_main">
+                    <h1 class="intro_header_main intro_header">
                         <?= field('app_introduction_title'); ?>
                     </h1>
-                    <h4 class="intro_header_secondary">
+                    <h4 class="intro_header_secondary intro_header">
                         <?= field('app_introduction_title_secondary'); ?>
                     </h4>
                 </div>
                 <div class="app_links_container">
-                    <div class="appstore_link_container">
-                        <a class="appstore_link" href="<?= field('app_introduction_appstore_url'); ?>">APP STORE</a>
+                    <div class="appstore_container">
+                        <div class="appstore_icon_container icon_container">
+                            <img class="appstore_icon icon" src="" alt="">
+                        </div>
+                        <div class="appstore_link_container link_container">
+                            <a class="appstore_link link" href="<?= field('app_introduction_appstore_url'); ?>">APP STORE</a>
+                        </div>
                     </div>
-                    <div class="googleplay_link_container">
-                        <a class="googleplay_link" href="<?= field('app_introduction_googleplay_url'); ?>">GOOGLE PLAY</a>
+                    <div class="googleplay_container">
+                        <div class="appstore_icon_container icon_container">
+                            <img class="appstore_icon icon" src="" alt="">
+                        </div>
+                        <div class="googleplay_link_container link_container">
+                            <a class="googleplay_link link" href="<?= field('app_introduction_googleplay_url'); ?>">GOOGLE PLAY</a>
+                        </div>
                     </div>
                 </div>
                 <div class="app_display_container">
