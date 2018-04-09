@@ -8,4 +8,14 @@
 @import 'header';
 @import 'footer';
 
-@import 'home-intro';
+/*PAGES*/
+@import 'pages/home';
+@import 'pages/the-app';
+@import 'pages/contact';
+@import 'pages/news';
+
+/*ELEMENTS*/
+@import 'elements/app_display';
+@import 'elements/app_link';
+@import 'elements/section_divider';
+

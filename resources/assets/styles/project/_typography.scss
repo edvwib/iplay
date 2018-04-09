@@ -8,3 +8,33 @@
 *{
   font-family: "Helvetica Neue";
 }
+
+main{
+
+  .title{
+    text-align: center;
+    color: $color-text-dark;
+
+    &.main_title{
+      font-size: 28px;
+      line-height: 43px;
+      font-weight: 800;
+    }
+
+    &.secondary_title{
+      line-height: 26px;
+      font-weight: 400;
+    }
+  }
+
+  .body{
+    color: $color-text-dark;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  a{
+    text-decoration: none;
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,27 @@
+/*
+ * This file is part of IPLAY.
+ * (c) IPY Holding AB.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+.app_display_container{
+  margin-bottom: 40px;
+
+  .frame{
+    height: 610px;
+    width: 295px;
+    margin: auto;
+
+    background-color: #000;
+    border-radius: 40px;
+    padding-top: 44px;
+    padding-left: 7px;
+
+    .image{
+      margin: auto;
+      height: 500px;
+      border-radius: 3px;
+    }
+  }
+}
