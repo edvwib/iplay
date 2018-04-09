@@ -75,6 +75,12 @@ $homeFields = [
                 'instructions' => 'This title will be displayed above the cards you can enter below.',
                 'required' => false,
             ]),
+            acf_text([
+                'name' => 'body',
+                'label' => 'Body',
+                'instructions' => 'This text will be displayed below the title.',
+                'required' => false,
+            ]),
             acf_repeater([
                 'name' => 'key_points',
                 'label' => 'Key points',
@@ -113,7 +119,7 @@ $homeFields = [
                 'instructions' => 'This title will be displayed above the form for the newsletter.',
                 'required' => false,
             ]),
-            acf_textarea([
+            acf_wysiwyg([
                 'name' => 'body',
                 'label' => 'Body',
                 'instructions' => 'This text will be displayed below the title.',

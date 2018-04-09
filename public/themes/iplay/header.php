@@ -21,12 +21,11 @@ declare(strict_types=1);
 <body <?php body_class(); ?>>
 
     <header>
-        <div class="logo">
-            <?php $logo = field('app_introduction_logo'); ?>
-            <?php if ($logo): ?>
-                <img src="<?= $logo['sizes']['large']; ?>"
-                alt="<?= $logo['alt'] ?>">
-            <?php endif; ?>
+        <a class="logo" href="/">
+            <img src="<?= get_template_directory_uri()?>/assets/images/iplay_logo.png" alt="logo">
+        </a>
+        <div class="hamburger_icon_container">
+            <img class="hamburger_icon" src="<?= get_template_directory_uri()?>/assets/images/hamburger_icon.png" alt="menu icon">
         </div>
         <nav role="navigation">
             <?php wp_nav_menu(['theme_location' => 'primary-menu']); ?>

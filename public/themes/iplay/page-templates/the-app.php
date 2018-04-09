@@ -15,15 +15,47 @@ declare(strict_types=1);
 <main role="main">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <article>
-            <header>
-                <h1><?php the_title(); ?></h1>
-            </header>
+            <div class="upcoming">
+                <div class="title_container">
+                    <h1 class="title">
+                        <?= field('upcoming_title'); ?>
+                    </h1>
+                </div>
 
-            <?php the_content(); ?>
+                <div class="upcoming_features_container">
+
+                </div>
+            </div><!-- /upcoming -->
+
+            <div class="about">
+                <div class="title_container">
+                    <h1 class="title">
+                        <?= field('about_title'); ?>
+                    </h1>
+                </div>
+
+                <div class="body_container">
+                    <p class="body">
+                        <?= field('about_body'); ?>
+                    </p>
+                </div>
+
+                <div class="app_display_container">
+                    <div class="frame">
+                        <?php
+                        $image = field('about_image');
+                        ?>
+                        <img class="image" src="<?= $image['sizes']['large']; ?>" alt="">
+                    </div>
+                </div>
+            </div><!-- /about -->
+
+            <?php require('components/app_links.php'); ?>
+
         </article>
     <?php endwhile; else: ?>
         <article>
-            <p>No content... :(</p>
+            <h1>No content... :(</h1>
         </article>
     <?php endif; ?>
 </main>

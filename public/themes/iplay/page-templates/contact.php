@@ -15,12 +15,60 @@ declare(strict_types=1);
 <main role="main">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <article>
-            <header>
-                <h1><?php the_title(); ?></h1>
-            </header>
+            <div class="contact_introduction_container">
+                <div class="title_container">
+                    <h1 class="title main_title">
+                        <?= field('contact_introduction_title'); ?>
+                    </h1>
+                </div>
+                <div class="image_container">
+                    <?php $image = field('contact_introduction_map'); ?>
+                    <img class="image"
+                        src="<?= $image['sizes']['large']; ?>"
+                        alt="<?= $image['alt']; ?>">
+                </div>
+                <div class="contact_info">
+                    <a class="phone_container">
+                        <img src="<?= get_template_directory_uri()?>/assets/images/googleplay_icon.png" alt="" class="icon">
+                        <p class="phone" href="phone:<?= field('contact_introduction_phone'); ?>">
+                            <?= field('contact_introduction_phone'); ?>
+                        </p>
+                    </a>
+                    <a class="email_container">
+                        <img src="<?= get_template_directory_uri()?>/assets/images/googleplay_icon.png" alt="" class="icon">
+                        <p class="email" href="mailto:<?= field('cotact_introduction_email'); ?>">
+                            <?= field('contact_introduction_email'); ?>
+                        </p>
+                    </a>
+                </div>
+            </div>
 
-            <?php the_content(); ?>
+            <div class="sectionDivider">
+                <div class="inner"></div>
+            </div>
 
+            <div class="contact_form_container">
+                <div class="title_container">
+                    <h1 class="title main_title">
+                        <?= field('contact_form_title'); ?>
+                    </h1>
+                </div>
+                <form action="#" class="form">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email Address">
+                    <textarea name="message" rows="5" placeholder="Message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+
+            <div class="the_team_container">
+                <div class="title_container">
+                    <h1 class="title main_title">
+                        <?= field('the_team_title'); ?>
+                    </h1>
+                </div>
+                <?php //foreach loop here?>
+            </div>
 
         </article>
     <?php endwhile; else: ?>

@@ -9,6 +9,10 @@
 
 declare(strict_types=1);
 
-require template_path('/custom-fields/home-acf.php');
+require_once template_path('/custom-fields/home-acf.php');
 
-require template_path('/custom-fields/employee-acf.php');
+require_once template_path('/custom-fields/contact-acf.php');
+
+require_once template_path('/custom-fields/the-app-acf.php');
+
+require_once template_path('/custom-fields/news-acf.php');
