@@ -1,0 +1,41 @@
+/*
+ * This file is part of IPLAY.
+ * (c) IPY Holding AB.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+.the_app{
+  background-color: $color-blue;
+  color: #FFF;
+
+
+  .about{
+    padding: 0 9%;
+
+    .title_container{
+        margin-bottom: 10px;
+
+      .title{
+
+      }
+    }
+
+    .body_container{
+      margin-bottom: 65px;
+
+      .body{
+        margin: 0;
+      }
+    }
+
+    .app_display_container{
+      margin-bottom: 78px;
+    }
+  }
+
+  .app_links_container{
+    padding: 0 5%;
+    padding-bottom: 60px;
+  }
+}

@@ -20,8 +20,24 @@ $theappFields = [
                 'instructions' => 'Title for the upcoming features.',
                 'required' => false,
             ]),
-
-            //repeater here with features
+            acf_repeater([
+                'name' => 'feature_timeline',
+                'label' => 'Features timeline',
+                'sub_fields' => [
+                    acf_text([
+                        'name' => 'title',
+                        'label' => 'Title',
+                        'instructions' => 'The main keyword for the feature.',
+                        'required' => false,
+                    ]),
+                    acf_date_picker([
+                        'name' => 'date',
+                        'label' => 'Date',
+                        'instructions' => 'The date the feature will become available. You can also have previous features here as well.',
+                        'required' => false,
+                    ]),
+                ]
+            ]),
         ],
     ]),
 
@@ -35,7 +51,7 @@ $theappFields = [
                 // 'instructions' => 'Title.',
                 'required' => false,
             ]),
-            acf_wysiwyg([
+            acf_textarea([
                 'name' => 'body',
                 'label' => 'Body',
                 'instructions' => 'More in-depth information about the app goes here.',

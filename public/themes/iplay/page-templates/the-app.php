@@ -12,12 +12,12 @@ declare(strict_types=1);
 
 <?php get_header(); ?>
 
-<main role="main">
+<main role="main" class="the_app">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <article>
             <div class="upcoming">
                 <div class="title_container">
-                    <h1 class="title">
+                    <h1 class="title main_title">
                         <?= field('upcoming_title'); ?>
                     </h1>
                 </div>
