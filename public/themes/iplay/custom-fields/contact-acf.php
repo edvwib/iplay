@@ -65,15 +65,31 @@ $contactFields = [
                 'instructions' => 'This title will be displayed above the grid of employees.',
                 'required' => false,
             ]),
-
-            // repeater here
-            acf_image([
-                'name' => 'image',
-                'label' => 'Image',
-                'instructions' => 'This image will be displayed to the right of the form for the newsletter.',
-                'required' => false,
-                'mime_types' => '.jpg, .jpeg, .png, .svg',
-                'return_value' => 'object',
+            acf_repeater([
+                'name' => 'employees',
+                'label' => 'Employees',
+                'sub_fields' => [
+                    acf_text([
+                        'name' => 'name',
+                        'label' => 'Name',
+                        'instructions' => 'The name of the employee.',
+                        'required' => false,
+                    ]),
+                    acf_image([
+                        'name' => 'iamge',
+                        'label' => 'image',
+                        'instructions' => 'An image of the employee.',
+                        'required' => false,
+                        'mime_types' => '.jpg, .jpeg, .png, .svg',
+                        'return_value' => 'object',
+                    ]),
+                    acf_text([
+                        'name' => 'position',
+                        'label' => 'Position',
+                        'instructions' => 'THe position the employee has in the company.',
+                        'required' => false,
+                    ]),
+                ]
             ]),
         ],
     ]),
