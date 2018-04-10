@@ -75,12 +75,6 @@ $homeFields = [
                 'instructions' => 'This title will be displayed above the cards you can enter below.',
                 'required' => false,
             ]),
-            acf_text([
-                'name' => 'body',
-                'label' => 'Body',
-                'instructions' => 'This text will be displayed below the title.',
-                'required' => false,
-            ]),
             acf_repeater([
                 'name' => 'key_points',
                 'label' => 'Key points',
@@ -119,7 +113,7 @@ $homeFields = [
                 'instructions' => 'This title will be displayed above the form for the newsletter.',
                 'required' => false,
             ]),
-            acf_wysiwyg([
+            acf_text([
                 'name' => 'body',
                 'label' => 'Body',
                 'instructions' => 'This text will be displayed below the title.',
@@ -132,6 +126,39 @@ $homeFields = [
                 'required' => false,
                 'mime_types' => '.jpg, .jpeg, .png, .svg',
                 'return_value' => 'object',
+            ]),
+        ],
+    ]),
+    acf_group([
+        'name' => 'footer',
+        'label' => 'Footer',
+        'sub_fields' => [
+            acf_repeater([
+                'name' => 'social_links',
+                'label' => 'Social media links',
+                'instructions' => 'Please note that these links will be displayed in the footer, on every page of the website, not only on the Home-page.',
+                'sub_fields' => [
+                    acf_text([
+                        'name' => 'name',
+                        'label' => 'Name',
+                        'instructions' => 'The name of the social media platform.',
+                        'required' => false,
+                    ]),
+                    acf_image([
+                        'name' => 'icon',
+                        'label' => 'Icon',
+                        'instructions' => 'An icon of the platforms logo.',
+                        'required' => false,
+                        'mime_types' => '.jpg, .jpeg, .png, .svg',
+                        'return_value' => 'object',
+                    ]),
+                    acf_url([
+                        'name' => 'url',
+                        'label' => 'Page URL',
+                        'instructions' => 'The link (URL) to the social media platform.',
+                        'required' => false,
+                    ]),
+                ]
             ]),
         ],
     ]),

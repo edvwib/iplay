@@ -6,13 +6,29 @@
  */
 
 .home_intro{
-  padding: 0 5%;
+  padding: 0 7.7%;
   padding-bottom: 75px;
+
+  background-image: url('/../themes/iplay/assets/images/header-background.jpg');
+  background-size: cover;
+  background-position: center;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  background-color: $color-gray-light;
+
+  .main_title{
+    margin-top: 57px;
+    margin-bottom: 14px;
+  }
+  .secondary_title{
+    margin-bottom: 50px;
+  }
+
+  .app_display_container{
+    margin-top: 50px;
+    margin-bottom: 90px;
+  }
 
   .logo_container{
     display: none;
@@ -23,13 +39,12 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  background-color: $color-gray-dark;
+  background-color: $color-blue;
 
-  .body_container{
-    width: 80%;
+  .title_container{
 
-    .body{
-      text-align: center;
+    .title{
+      padding: 0 8%;
     }
   }
 
@@ -37,77 +52,99 @@
     display: flex;
     overflow-x: auto;
     width: 100%;
+    margin-top: 40px;
 
     .key_point_container{
       width: 70%;
       margin: 0 auto;
       padding-top: 20px;
-      background-color: #FFF;
+      background-color: #262B34;
       overflow-x: hidden; /*Hides the skew on the icon container*/
 
       .icon_container{
-        background-color: #252525;
-        width: 50%;
-        margin-left: -29px;
-        transform: skewX(-40deg);
-        display: flex;
-        justify-content: center;
-
-        .icon{
-          transform: skewX(40deg); /*Reset skew above*/
-        }
+        width: 60px;
+        margin: 0 auto;
       }
 
       .title_container, .body_container{
         margin-left: 8%;
-      }
 
+        .title{
+          color: $color-green;
+          font-size: 20px;
+          line-height: 32px;
+          font-weight: 800;
+        }
+        .body{
+          text-align: center;
+        }
+      }
     }
   }
 }
 
 
 .newsletter_container{
-  background-color: $color-gray-dark;
-  padding: 0 8%;
-  padding-bottom: 150px;
+  padding: 0 4%;
+
+  min-height: 460px;
+
+  background-image: url('/../themes/iplay/assets/images/newsletter-background.jpg');
+  background-size: cover;
+  background-position: center;
 
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-content: center;
+
+
 
   .title_container{
-
-    .title{
-      text-align: center;
-    }
+    margin-bottom: 16px;
   }
 
   .body_container{
-
-    .body{
-      text-align: center;
-      font-size: 16px;
-      line-height: 26px;
-    }
+    margin-bottom: 46px;
   }
 
   .form{
     display: flex;
+    height: 50px;
+    overflow-x: hidden;
+    width: 100%;
 
-    input[type=email]{
-      padding-left: 20px;
-      border: none;
+
+    .email_container{
+      height: 100%;
+      width: 75%;
+      transform: skewX(-23deg);
       background-color: #FFF;
+      margin-left: -10px;
+
+      display: flex;
+      justify-items: center;
+
+      overflow-x: hidden;
+
+      input{
+        border: none;
+        padding-left: 20px;
+        transform: skewX(23deg);
+      }
     }
 
-    input[type=submit]{
-      border: 0;
+    .submit_container{
+      height: 100%;
+      width: 25%;
+      transform: skewX(-23deg);
       background-color: $color-green;
-    }
 
-    input{
-      height: 45px;
+      button{
+        height: inherit;
+        border: 0;
+        transform: skewX(23deg);
+      }
     }
   }
 }

@@ -53,11 +53,6 @@ declare(strict_types=1);
                         <?= field('key_features_title') ?>
                     </h1>
                 </div>
-                <div class="body_container">
-                    <p class="body">
-                        <?= field('key_features_body') ?>
-                    </p>
-                </div>
 
                 <?php if (have_rows('key_features_key_points')): ?>
                     <div class="key_points_container">
@@ -86,21 +81,24 @@ declare(strict_types=1);
                 <?php endif; ?>
             </div> <!-- /key_points_section_container -->
 
-
             <div class="newsletter_container">
                 <div class="title_container">
-                    <h1 class="title">
+                    <h1 class="title main_title">
                         <?= field('newsletter_title') ?>
                     </h1>
                 </div>
                 <div class="body_container">
-                    <p class="body">
+                    <h4 class="title secondary_title">
                         <?= field('newsletter_body') ?>
-                    </p>
+                    </h4>
                 </div>
                 <form class="form" action="#" method="post">
-                    <input type="email" name="email" placeholder="Email Address">
-                    <input type="submit" value="Sign Up">
+                    <div class="email_container">
+                        <input type="email" name="email" placeholder="Email Address">
+                    </div>
+                    <div class="submit_container">
+                        <button type="submit">Sign up</button>
+                    </div>
                 </form>
                 <div class="image_container">
                     <?php $image = field('newsletter_image'); ?>

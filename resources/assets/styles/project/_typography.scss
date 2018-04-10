@@ -13,22 +13,24 @@ main{
 
   .title{
     text-align: center;
-    color: $color-text-dark;
+    color: $color-text-light;
+    margin: 0;
 
     &.main_title{
       font-size: 28px;
-      line-height: 43px;
+      line-height: 33px;
       font-weight: 800;
     }
 
     &.secondary_title{
+      font-weight: 16px;
       line-height: 26px;
       font-weight: 400;
     }
   }
 
   .body{
-    color: $color-text-dark;
+    color: $color-text-light;
     font-size: 16px;
     line-height: 26px;
   }
