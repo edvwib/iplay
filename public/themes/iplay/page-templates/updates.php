@@ -16,10 +16,10 @@ declare(strict_types=1);
     <article class="updates_container">
         <div class="categories_header">Categories:</div>
         <?php
-            $categories = get_terms( array(
+            $categories = get_terms(array(
                 'taxonomy' => 'category',
                 'hide_empty' => true,
-            ) );
+            ));
         ?>
         <ul class="categories">
             <?php foreach ($categories as $category): ?>
@@ -34,7 +34,7 @@ declare(strict_types=1);
 
     <?php
         $updates = new WP_Query(['post_type'=> 'update',]);
-        if($updates->have_posts() ) : while ( $updates->have_posts() ) : $updates->the_post();
+        if ($updates->have_posts()) : while ($updates->have_posts()) : $updates->the_post();
                 the_title();
             endwhile;
         endif;

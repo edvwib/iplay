@@ -20,10 +20,10 @@ register_extended_post_type('Update', [
             'taxonomy' => 'category'
         ],
     ], [
-		# Override the base names used for labels:
-		'singular' => 'Update',
-		'plural'   => 'Updates',
-		'slug'     => 'update',
+        # Override the base names used for labels:
+        'singular' => 'Update',
+        'plural'   => 'Updates',
+        'slug'     => 'update',
     ]
 ]);
 
@@ -34,4 +34,3 @@ register_extended_taxonomy('category', 'update', [
         'menu_name' => 'Categories'
     ]
 ]);
-
