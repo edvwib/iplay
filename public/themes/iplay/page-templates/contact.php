@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 <?php get_header(); ?>
 
-<main role="main">
+<main role="main" class="contact">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <article>
             <div class="contact_introduction_container">
@@ -67,7 +67,15 @@ declare(strict_types=1);
                         <?= field('the_team_title'); ?>
                     </h1>
                 </div>
-                <?php //foreach loop here?>
+                <div class="employee_container">
+                    <?php while (have_rows('the_team_employees')): the_row(); ?>
+                        <div class="employee">
+                            <?php $image = field('image'); ?>
+                            <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['sizes']; ?>">
+                            <p class="name"><?= field('name'); ?></p>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
             </div>
 
         </article>

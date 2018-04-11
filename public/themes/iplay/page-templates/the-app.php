@@ -23,7 +23,15 @@ declare(strict_types=1);
                 </div>
 
                 <div class="upcoming_features_container">
-
+                    <?php while (have_rows('upcoming_feature_timeline')): the_row(); ?>
+                        <div class="feature_container"
+                            data-title="<?= field('title'); ?>"
+                            data-date="<?= field('date'); ?>">
+                            <h5 class="feature_title"><?= field('title'); ?></h5>
+                            <h6 class="feature_date"><?= field('date'); ?></h6>
+                        </div>
+                    <?php endwhile; ?>
+                    <div class="features_scroll"></div>
                 </div>
             </div><!-- /upcoming -->
 
