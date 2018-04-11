@@ -9,21 +9,21 @@
 
 declare(strict_types=1);
 
-$newsFields = [
+$updateFields = [
 
 ];
 
-$newsLocation = [
+$updateLocation = [
     [
-        acf_location('page_template', 'page-templates/news.php')
+        acf_location('post_type', 'update')
     ]
 ];
 
 acf_field_group([
-    'title' => 'News',
-    'fields' => $newsFields,
+    'title' => 'update',
+    'fields' => $updateFields,
     'style' => 'seamless',
-    'location' => $newsLocation,
+    'location' => $updateLocation,
     'hide_on_screen' => [
         0 => 'the_content',
     ],

@@ -15,4 +15,4 @@ require_once template_path('/custom-fields/contact-acf.php');
 
 require_once template_path('/custom-fields/the-app-acf.php');
 
-require_once template_path('/custom-fields/news-acf.php');
+require_once template_path('/custom-fields/update-acf.php');

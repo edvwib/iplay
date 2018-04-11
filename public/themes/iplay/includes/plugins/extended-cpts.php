@@ -10,7 +10,7 @@
 declare(strict_types=1);
 
 add_action('init', function () {
-    require_once template_path('/post-types/news-cpt.php');
+    require_once template_path('/post-types/update-cpt.php');
 
     require_once template_path('/post-types/header-cpt.php');
     require_once template_path('/post-types/footer-cpt.php');

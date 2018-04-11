@@ -76,7 +76,7 @@ $contactFields = [
                         'required' => false,
                     ]),
                     acf_image([
-                        'name' => 'iamge',
+                        'name' => 'image',
                         'label' => 'image',
                         'instructions' => 'An image of the employee.',
                         'required' => false,
