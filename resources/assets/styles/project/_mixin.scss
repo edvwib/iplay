@@ -1,0 +1,24 @@
+/*
+ * This file is part of IPLAY.
+ * (c) IPY Holding AB.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+@mixin bp($point) {
+  @if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else
+  if $point == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else
+  if $point == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
