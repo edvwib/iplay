@@ -17,10 +17,20 @@
     padding-top: 44px;
     padding-left: 7px;
 
+    @include bp(desktop){
+      padding-top: 40px;
+      // height: 430px;
+      // width: 205px;
+    }
+
     .image{
       margin: auto;
       height: 500px;
       border-radius: 3px;
+
+      @include bp(desktop){
+        // height: 340px;
+      }
     }
   }
 }
