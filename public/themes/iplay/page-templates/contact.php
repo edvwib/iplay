@@ -28,23 +28,19 @@ declare(strict_types=1);
                         alt="<?= $image['alt']; ?>">
                 </div>
                 <div class="contact_info">
-                    <a class="phone_container">
-                        <img src="<?= get_template_directory_uri()?>/assets/images/googleplay_icon.png" alt="" class="icon">
-                        <p class="phone" href="phone:<?= field('contact_introduction_phone'); ?>">
+                    <a class="phone_container" href="phone:<?= field('contact_introduction_phone'); ?>">
+                        <img src="<?= get_template_directory_uri()?>/assets/images/phone.png" alt="" class="icon">
+                        <p class="phone">
                             <?= field('contact_introduction_phone'); ?>
                         </p>
                     </a>
-                    <a class="email_container">
-                        <img src="<?= get_template_directory_uri()?>/assets/images/googleplay_icon.png" alt="" class="icon">
-                        <p class="email" href="mailto:<?= field('cotact_introduction_email'); ?>">
+                    <a class="email_container" href="mailto:<?= field('contact_introduction_email'); ?>">
+                        <img src="<?= get_template_directory_uri()?>/assets/images/mail.png" alt="" class="icon">
+                        <p class="email">
                             <?= field('contact_introduction_email'); ?>
                         </p>
                     </a>
                 </div>
-            </div>
-
-            <div class="sectionDivider">
-                <div class="inner"></div>
             </div>
 
             <div class="contact_form_container">

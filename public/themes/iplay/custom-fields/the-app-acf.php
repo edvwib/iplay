@@ -34,6 +34,7 @@ $theappFields = [
                         'name' => 'date',
                         'label' => 'Date',
                         'instructions' => 'The date the feature will become available. You can also have previous features here as well.',
+                        'return_format' => 'Y-m-d',
                         'required' => false,
                     ]),
                 ]

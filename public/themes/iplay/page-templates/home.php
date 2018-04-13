@@ -16,7 +16,8 @@ declare(strict_types=1);
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <article>
             <div class="home_intro">
-                <div class="title_container">
+                <div class="container">
+                    <div class="title_container">
                     <div class="logo_container">
                         <?php
                             $image = field('app_introduction_title_logo');
@@ -33,6 +34,7 @@ declare(strict_types=1);
                     </h4>
                 </div>
                 <?php require('components/app_links.php'); ?>
+                </div>
                 <div class="app_display_container">
                     <div class="frame">
                         <?php
@@ -44,7 +46,7 @@ declare(strict_types=1);
             </div><!-- /home_intro -->
 
             <div class="sectionDivider">
-                <div class="inner"></div>
+                <div class="inner"><i class="fas fa-angle-down icon"></i></div>
             </div>
 
             <div class="key_points_section_container">
@@ -81,31 +83,26 @@ declare(strict_types=1);
                 <?php endif; ?>
             </div> <!-- /key_points_section_container -->
 
-            <div class="newsletter_container">
-                <div class="title_container">
-                    <h1 class="title main_title">
-                        <?= field('newsletter_title') ?>
-                    </h1>
-                </div>
-                <div class="body_container">
-                    <h4 class="title secondary_title">
-                        <?= field('newsletter_body') ?>
-                    </h4>
-                </div>
-                <form class="form" action="#" method="post">
-                    <div class="email_container">
-                        <input type="email" name="email" placeholder="Email Address">
+            <div class="newsletter_background">
+                <div class="newsletter_container">
+                    <div class="title_container">
+                        <h1 class="title main_title">
+                            <?= field('newsletter_title') ?>
+                        </h1>
                     </div>
-                    <div class="submit_container">
-                        <button type="submit">Sign up</button>
+                    <div class="body_container">
+                        <h4 class="title secondary_title">
+                            <?= field('newsletter_body') ?>
+                        </h4>
                     </div>
-                </form>
-                <div class="image_container">
-                    <?php $image = field('newsletter_image'); ?>
-                    <img class="image"
-                        src="<?= $image['sizes']['large']; ?>"
-                        alt="<?php $image['alt']; ?>"
-                    >
+                    <form class="form" action="#" method="post">
+                        <div class="email_container">
+                            <input type="email" name="email" placeholder="Email Address">
+                        </div>
+                        <div class="submit_container">
+                            <button type="submit">Sign up</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

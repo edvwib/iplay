@@ -86,7 +86,7 @@ $contactFields = [
                     acf_text([
                         'name' => 'position',
                         'label' => 'Position',
-                        'instructions' => 'THe position the employee has in the company.',
+                        'instructions' => 'The position the employee has in the company.',
                         'required' => false,
                     ]),
                 ]

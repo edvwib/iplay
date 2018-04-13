@@ -119,14 +119,6 @@ $homeFields = [
                 'instructions' => 'This text will be displayed below the title.',
                 'required' => false,
             ]),
-            acf_image([
-                'name' => 'image',
-                'label' => 'Image',
-                'instructions' => 'This image will be displayed to the right of the form for the newsletter.',
-                'required' => false,
-                'mime_types' => '.jpg, .jpeg, .png, .svg',
-                'return_value' => 'object',
-            ]),
         ],
     ]),
     acf_group([

@@ -14,7 +14,7 @@ declare(strict_types=1);
     <?php wp_nav_menu(['theme_location' => 'primary-menu']); ?>
 
     <div class="footer_social">
-        <?php while (have_rows('footer_social_links')): the_row(); ?>
+        <?php while (have_rows('footer_social_links', get_option('page_on_front'))): the_row(); ?>
             <a href="<?= field('url'); ?>" title="<?= field('name'); ?>">
                 <?php $icon = field('icon'); ?>
                 <img src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>">

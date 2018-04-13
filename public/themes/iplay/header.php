@@ -24,9 +24,9 @@ declare(strict_types=1);
         <a class="logo" href="/">
             <img src="<?= get_template_directory_uri()?>/assets/images/iplay_logo.png" alt="logo">
         </a>
-        <div class="hamburger_icon_container">
-            <img class="hamburger_icon" src="<?= get_template_directory_uri()?>/assets/images/hamburger_icon.png" alt="menu icon">
-        </div>
+        <a class="header_download" href="http://onelink.to/pq2etr">
+            <span>DOWNLOAD THE APP</span>
+        </a>
         <nav role="navigation">
             <?php wp_nav_menu(['theme_location' => 'primary-menu']); ?>
         </nav>
