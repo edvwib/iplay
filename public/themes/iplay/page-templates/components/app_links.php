@@ -12,7 +12,7 @@ declare(strict_types=1);
 <div class="app_links_container">
     <a class="link" href="<?= field('app_introduction_appstore_url'); ?>">
         <div class="icon_container">
-            <img class="icon" src="<?= get_template_directory_uri()?>/assets/images/apple_icon.png" alt="">
+            <i class="fab fa-apple icon"></i>
         </div>
         <div class="text_container">
             <p class="text">APP STORE</p>
@@ -20,7 +20,7 @@ declare(strict_types=1);
     </a>
     <a class="link" href="<?= field('app_introduction_googleplay_url'); ?>">
         <div class="icon_container">
-            <img class="icon" src="<?= get_template_directory_uri()?>/assets/images/googleplay_icon.png" alt="">
+            <i class="fab fa-google-play icon"></i>
         </div>
         <div class="text_container">
             <p class="text">GOOGLE PLAY</p>

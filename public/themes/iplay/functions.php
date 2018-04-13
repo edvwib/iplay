@@ -47,6 +47,9 @@ add_action('wp_enqueue_scripts', function () {
     //wp_register_script('iplay', mix('assets/scripts/iplay.js'), '', '', true);
     wp_register_script('iplay', '/../themes/iplay/assets/scripts/iplay.js', '', '', true);
     wp_enqueue_script('iplay');
+
+    wp_register_script('faicons', 'https://use.fontawesome.com/releases/v5.0.10/js/all.js', '', '', true);
+    wp_enqueue_script('faicons');
 });
 
 // Remove JPEG compression.
