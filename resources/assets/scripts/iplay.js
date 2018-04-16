@@ -79,11 +79,19 @@ if (document.querySelector('.flickity-wrapper')) {
   let barWidth = progressBar.offsetWidth;
   let offset = containerWidth / barWidth;
 
+  console.log(containerWidth/barWidth);
+
+
   keyPointsFlick.on('scroll', (progress) => {
+    updateScrollbar(progress);
+  });
+
+  const updateScrollbar = (progress) => {
     progress = Math.max(0, Math.min(1, progress));
 
-    progressBar.style.transform = `translateX(calc(${(progress * 100) * offset}%)`;
-  });
+    progressBar.style.transform = `translateX(${(progress * 80) * offset}%)`;
+  }
+  updateScrollbar(.5);
 }
 
 
