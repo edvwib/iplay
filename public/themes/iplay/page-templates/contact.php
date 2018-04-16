@@ -63,15 +63,16 @@ declare(strict_types=1);
                         <?= field('the_team_title'); ?>
                     </h1>
                 </div>
-                <div class="employee_container">
+                <div class="employee_container swiper-wrapper">
                     <?php while (have_rows('the_team_employees')): the_row(); ?>
-                        <div class="employee">
+                        <div class="employee swiper-slide">
                             <?php $image = field('image'); ?>
-                            <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['sizes']; ?>">
+                            <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>">
                             <p class="name"><?= field('name'); ?></p>
                         </div>
                     <?php endwhile; ?>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
 
         </article>
