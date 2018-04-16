@@ -8,11 +8,12 @@
 header{
   height: 70px;
   max-height: 116px;
-  background-color: transparent;
+  background-color: $color-blue;
+  z-index: 1000;
 
-  position: absolute;
+  position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
 
@@ -57,10 +58,15 @@ header{
   nav{
     display: none;
 
+    @include bp(desktop){
+      max-width: 800px;
+    }
+
     @include bp(tablet){
       display: block;
       align-self: center;
       flex: 1;
+      margin-right: 5%;
 
       .menu{
 
@@ -76,6 +82,103 @@ header{
               color: $color-green-hover;
             }
           }
+        }
+      }
+    }
+  }
+
+  .hamburger_button{
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    bottom: 28px;
+    right: 14px;
+    z-index: 1000;
+    background-color: #FFF;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+
+    svg{
+      align-self: center;
+      height: 25px;
+      width: 25px!important;
+
+      path{
+        height: 25px;
+        width: 25px;
+      }
+    }
+
+    .fa-times{
+      display: none;
+    }
+    &.active{
+      .fa-bars{
+        display: none;
+      }
+
+      .fa-times{
+        display: block;
+      }
+    }
+  }
+
+  .hamburger_menu{
+    position: fixed;
+    z-index: 900;
+    left: 0;
+    bottom: 0;
+    transform: translateY(200%);
+    transition: all .5s;
+    background-color: rgba(38, 43, 52, .95);
+    width: 100vw;
+    height: 380px;
+
+    &.active{
+      transform: translateY(0);
+    }
+
+    .social{
+      height: 120px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      a{
+        color: $color-green;
+        height: 25px;
+        width: 25px;
+        svg, path{
+          height: 100%;
+          width: 100%;
+        }
+
+        &:hover{
+          color: $color-green-hover;
+        }
+      }
+    }
+
+    .menu{
+      height: 260px;
+
+      ul{
+        height: 100%;
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+
+        a{
+          color: $color-green;
+          text-decoration: none;
+          font-size: 20px;
+          line-height: 25px;
+          font-weight: 800;
+          text-transform: uppercase;
         }
       }
     }
