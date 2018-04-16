@@ -10,7 +10,32 @@
 declare(strict_types=1);
 
 $updateFields = [
-
+    acf_group([
+        'name' => 'update',
+        'label' => 'Update post',
+        'sub_fields' => [
+            acf_image([
+                'name' => 'image',
+                'label' => 'image',
+                'instructions' => 'This image will be displayed below the title on the post.',
+                'required' => false,
+                'mime_types' => '.jpg, .jpeg, .png, .svg',
+                'return_value' => 'object',
+            ]),
+            acf_text([
+                'name' => 'title_secondary',
+                'label' => 'Secondary title',
+                'instructions' => 'This title will be displayed below the image.',
+                'required' => false,
+            ]),
+            acf_textarea([
+                'name' => 'body',
+                'label' => 'Body',
+                'instructions' => 'The main content of the post.',
+                'required' => true,
+            ]),
+        ],
+    ]),
 ];
 
 $updateLocation = [
