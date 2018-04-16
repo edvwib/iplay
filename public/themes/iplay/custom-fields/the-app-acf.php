@@ -60,13 +60,19 @@ $theappFields = [
             ]),
 
             // repeater here for image slideshow maybe
-            acf_image([
-                'name' => 'image',
-                'label' => 'Image',
-                'instructions' => 'This image will be displayed below the body.',
-                'required' => false,
-                'mime_types' => '.jpg, .jpeg, .png, .svg',
-                'return_value' => 'object',
+            acf_repeater([
+                'name' => 'slideshow',
+                'label' => 'App slideshow',
+                'sub_fields' => [
+                    acf_image([
+                        'name' => 'image',
+                        'label' => 'Image',
+                        'instructions' => 'These images will be displayed below the body.',
+                        'required' => false,
+                        'mime_types' => '.jpg, .jpeg, .png, .svg',
+                        'return_value' => 'object',
+                    ]),
+                ]
             ]),
         ],
     ]),

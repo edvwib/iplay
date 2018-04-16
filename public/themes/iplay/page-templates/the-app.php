@@ -31,7 +31,7 @@ declare(strict_types=1);
                             >
                                 <?= $i%2 == 0 ? '<div class="block"></div>' : ''?>
                                 <h5 class="feature_title"><?= field('title'); ?></h5>
-                                <h6 class="feature_date">
+                                <h6 class="feature_date"><div class="app_display_container">
                                     <?php
                                     $date = DateTime::createFromFormat("Y-m-d", field('date'));
                                     echo $isPast ? 'Released ' : 'Releases ';
@@ -47,7 +47,7 @@ declare(strict_types=1);
 
             <div class="about">
                 <div class="title_container">
-                    <h1 class="title">
+                    <h1 class="title main_title">
                         <?= field('about_title'); ?>
                     </h1>
                 </div>
@@ -56,19 +56,23 @@ declare(strict_types=1);
                     <p class="body">
                         <?= field('about_body'); ?>
                     </p>
+                    <?php require('components/app_links.php'); ?>
                 </div>
 
                 <div class="app_display_container">
-                    <div class="frame">
-                        <?php
-                        $image = field('about_image');
-                        ?>
-                        <img class="image" src="<?= $image['sizes']['large']; ?>" alt="">
-                    </div>
+                    <?php if (have_rows('about_slideshow')):  ?>
+                        <div class="frame">
+                            <div class="swiper-wrapper">
+                                <?php while (have_rows('about_slideshow')): the_row();
+                                    $image = field('image'); ?>
+                                    <img class="image swiper-slide" src="<?= $image['sizes']['large']; ?>" alt="">
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            </div><!-- /about -->
 
-            <?php require('components/app_links.php'); ?>
+            </div><!-- /about -->
 
         </article>
     <?php endwhile; else: ?>

@@ -36,20 +36,24 @@ declare(strict_types=1);
                 <?php require('components/app_links.php'); ?>
                 </div>
                 <div class="app_display_container">
-                    <div class="frame">
-                        <?php
-                        $image = field('app_introduction_app_display');
-                        ?>
-                        <img class="image" src="<?= $image['sizes']['large']; ?>" alt="">
-                    </div>
+                    <?php if (have_rows('app_introduction_slideshow')):  ?>
+                        <div class="frame">
+                            <div class="swiper-wrapper">
+                                <?php while (have_rows('app_introduction_slideshow')): the_row();
+                                    $image = field('image'); ?>
+                                    <img class="image swiper-slide" src="<?= $image['sizes']['large']; ?>" alt="">
+                                <?php endwhile; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div><!-- /home_intro -->
 
             <div class="sectionDivider">
-                <div class="inner"><i class="fas fa-angle-down icon"></i></div>
+                <a href="#key_points_section_container" class="inner"><i class="fas fa-angle-down icon"></i></a>
             </div>
 
-            <div class="key_points_section_container">
+            <div class="key_points_section_container" id="key_points_section_container">
                 <div class="title_container">
                     <h1 class="title main_title">
                         <?= field('key_features_title') ?>
@@ -57,9 +61,10 @@ declare(strict_types=1);
                 </div>
 
                 <?php if (have_rows('key_features_key_points')): ?>
-                    <div class="key_points_container">
+                <div class="key_points_swiper_container">
+                    <div class="key_points_wrapper swiper-wrapper">
                         <?php while (have_rows('key_features_key_points')): the_row(); ?>
-                            <div class="key_point_container">
+                            <div class="key_point_container swiper-slide">
                                 <div class="icon_container">
                                     <?php $icon = field('icon'); ?>
                                     <img class="icon"
@@ -80,6 +85,8 @@ declare(strict_types=1);
                             </div>
                         <?php endwhile; ?>
                     </div>
+                    <div class="swiper-pagination"></div>
+                </div>
                 <?php endif; ?>
             </div> <!-- /key_points_section_container -->
 
@@ -100,7 +107,7 @@ declare(strict_types=1);
                             <input type="email" name="email" placeholder="Email Address">
                         </div>
                         <div class="submit_container">
-                            <button type="submit">Sign up</button>
+                            <button type="submit"><img src="<?= get_template_directory_uri()?>/assets/images/arrow-send.svg" alt="arrow"></button>
                         </div>
                     </form>
                 </div>

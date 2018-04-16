@@ -54,13 +54,19 @@ $homeFields = [
                 'instructions' => 'The link (URL) to the appplication on Google Play.',
                 'required' => false,
             ]),
-            acf_image([
-                'name' => 'app_display',
-                'label' => 'App display',
-                'instructions' => 'The image to be displayed to the right on the start page.',
-                'required' => false,
-                'mime_types' => '.jpg, .jpeg, .png, .svg',
-                'return_value' => 'object',
+            acf_repeater([
+                'name' => 'slideshow',
+                'label' => 'App slideshow',
+                'sub_fields' => [
+                    acf_image([
+                        'name' => 'image',
+                        'label' => 'App image',
+                        'instructions' => 'These images will be displayed to the right on the start page.',
+                        'required' => false,
+                        'mime_types' => '.jpg, .jpeg, .png, .svg',
+                        'return_value' => 'object',
+                    ]),
+                ]
             ]),
         ],
     ]),
@@ -139,10 +145,16 @@ $homeFields = [
                     acf_image([
                         'name' => 'icon',
                         'label' => 'Icon',
-                        'instructions' => 'An icon of the platforms logo.',
+                        'instructions' => 'An icon of the platforms logo, if this is set any icon set in the next column will not be used.',
                         'required' => false,
                         'mime_types' => '.jpg, .jpeg, .png, .svg',
                         'return_value' => 'object',
+                    ]),
+                    acf_text([
+                        'name' => 'fa_icon',
+                        'label' => 'Font Awesome Icon',
+                        'instructions' => 'Here you can choose an icon from https://fontawesome.com/icons, e.g "fab fa-facebook-f"',
+                        'required' => false,
                     ]),
                     acf_url([
                         'name' => 'url',
