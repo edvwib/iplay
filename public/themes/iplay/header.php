@@ -22,7 +22,7 @@ declare(strict_types=1);
 
     <header>
         <a class="logo" href="/">
-            <img src="<?= get_template_directory_uri()?>/assets/images/iplay_logo.png" alt="logo">
+            <img data-src="<?= get_template_directory_uri()?>/assets/images/iplay_logo.png" alt="logo">
         </a>
         <a class="header_download" href="http://onelink.to/pq2etr">
             <span>DOWNLOAD THE APP</span>
@@ -41,7 +41,7 @@ declare(strict_types=1);
                     <a href="<?= field('url'); ?>" title="<?= field('name'); ?>"> <?php
                         $icon = field('icon');
                         if (field('icon')) {
-                            ?><img src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>"><?php
+                            ?><img data-src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>"><?php
                         } else {
                             ?><i class="<?= field('fa_icon'); ?>"></i><?php
                         }

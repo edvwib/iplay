@@ -24,18 +24,18 @@ declare(strict_types=1);
                 <div class="image_container">
                     <?php $image = field('contact_introduction_map'); ?>
                     <img class="image"
-                        src="<?= $image['sizes']['large']; ?>"
+                        data-src="<?= $image['sizes']['large']; ?>"
                         alt="<?= $image['alt']; ?>">
                 </div>
                 <div class="contact_info">
                     <a class="phone_container" href="phone:<?= field('contact_introduction_phone'); ?>">
-                        <img src="<?= get_template_directory_uri()?>/assets/images/phone.png" alt="" class="icon">
+                        <img data-src="<?= get_template_directory_uri()?>/assets/images/phone.png" alt="" class="icon">
                         <p class="phone">
                             <?= field('contact_introduction_phone'); ?>
                         </p>
                     </a>
                     <a class="email_container" href="mailto:<?= field('contact_introduction_email'); ?>">
-                        <img src="<?= get_template_directory_uri()?>/assets/images/mail.png" alt="" class="icon">
+                        <img data-src="<?= get_template_directory_uri()?>/assets/images/mail.png" alt="" class="icon">
                         <p class="email">
                             <?= field('contact_introduction_email'); ?>
                         </p>
@@ -67,7 +67,7 @@ declare(strict_types=1);
                     <?php while (have_rows('the_team_employees')): the_row(); ?>
                         <div class="employee swiper-slide">
                             <?php $image = field('image'); ?>
-                            <img src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>">
+                            <img data-src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>">
                             <p class="name"><?= field('name'); ?></p>
                         </div>
                     <?php endwhile; ?>

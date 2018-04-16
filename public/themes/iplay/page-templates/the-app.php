@@ -65,7 +65,7 @@ declare(strict_types=1);
                             <div class="swiper-wrapper">
                                 <?php while (have_rows('about_slideshow')): the_row();
                                     $image = field('image'); ?>
-                                    <img class="image swiper-slide" src="<?= $image['sizes']['large']; ?>" alt="">
+                                    <img class="image swiper-slide" data-src="<?= $image['sizes']['large']; ?>" alt="">
                                 <?php endwhile; ?>
                             </div>
                         </div>

@@ -23,7 +23,7 @@ declare(strict_types=1);
                             $image = field('app_introduction_title_logo');
                         ?>
                         <img class="logo"
-                            src="<?= $image['sizes']['large']; ?>"
+                            data-src="<?= $image['sizes']['large']; ?>"
                             alt="<?= $image['alt']; ?>">
                     </div>
                     <h1 class="title main_title">
@@ -41,7 +41,7 @@ declare(strict_types=1);
                             <div class="swiper-wrapper">
                                 <?php while (have_rows('app_introduction_slideshow')): the_row();
                                     $image = field('image'); ?>
-                                    <img class="image swiper-slide" src="<?= $image['sizes']['large']; ?>" alt="">
+                                    <img class="image swiper-slide" data-src="<?= $image['sizes']['large']; ?>" alt="">
                                 <?php endwhile; ?>
                             </div>
                         </div>
@@ -61,16 +61,17 @@ declare(strict_types=1);
                 </div>
 
                 <?php if (have_rows('key_features_key_points')): ?>
-                <div class="key_points_swiper_container">
-                    <div class="key_points_wrapper swiper-wrapper">
+                <div class="key_points_wrapper">
+                    <div class="flickity-wrapper">
                         <?php while (have_rows('key_features_key_points')): the_row(); ?>
-                            <div class="key_point_container swiper-slide">
+                            <div class="key_point_container flickity-slide">
                                 <div class="icon_container">
-                                    <?php $icon = field('icon'); ?>
-                                    <img class="icon"
-                                        src="<?= $icon['sizes']['large'] ?>"
-                                        alt="<?= $icon['alt'] ?>"
-                                    >
+                                    <?php $icon = field('icon');
+                                    if ($icon) {
+                                        ?><img data-src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>"><?php
+                                    } else {
+                                        ?><i class="<?= field('fa_icon'); ?>"></i><?php
+                                    } ?>
                                 </div>
                                 <div class="title_container">
                                     <h3 class="title">
@@ -85,7 +86,9 @@ declare(strict_types=1);
                             </div>
                         <?php endwhile; ?>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="progressbar_container">
+                        <div class="progressbar"></div>
+                    </div>
                 </div>
                 <?php endif; ?>
             </div> <!-- /key_points_section_container -->
@@ -107,7 +110,7 @@ declare(strict_types=1);
                             <input type="email" name="email" placeholder="Email Address">
                         </div>
                         <div class="submit_container">
-                            <button type="submit"><img src="<?= get_template_directory_uri()?>/assets/images/arrow-send.svg" alt="arrow"></button>
+                            <button type="submit"><img data-src="<?= get_template_directory_uri()?>/assets/images/arrow-send.svg" alt="arrow"></button>
                         </div>
                     </form>
                 </div>

@@ -17,8 +17,8 @@ declare(strict_types=1);
         <?php while (have_rows('footer_social_links', get_option('page_on_front'))): the_row(); ?>
             <a href="<?= field('url'); ?>" title="<?= field('name'); ?>"> <?php
                 $icon = field('icon');
-                if (field('icon')) {
-                    ?><img src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>"><?php
+                if ($icon) {
+                    ?><img data-src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>"><?php
                 } else {
                     ?><i class="<?= field('fa_icon'); ?>"></i><?php
                 }
