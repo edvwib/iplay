@@ -6,19 +6,36 @@
  */
 
 .the_app{
+  padding-top: 80px;
+
+  @include bp(desktop){
+    padding-top: 130px;
+  }
 
   .upcoming{
+    display: flex;
+    flex-flow: column wrap;
 
-    .main_title{
-      padding-top: 57px;
-      margin-bottom: 40px;
-      margin-top: 60px;
+    .title_container{
+
+      @include bp(desktop){
+        height: 90px;
+      }
+
+      .main_title{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 80px;
+      }
     }
 
     .upcoming_features_container{
-      margin-bottom: 80px;
+      margin-top: 40px;
+      margin-bottom: 40px;
       height: 139px;
-      overflow-x: scroll;
+      align-self: center;
+      overflow-x: auto;
+      max-width: 100%;
       display: flex;
 
       .feature_container{
@@ -73,26 +90,34 @@
   .about{
     padding: 0 9%;
 
+    background-image: url('/../themes/iplay/assets/images/header-background.jpg');
+    background-size: cover;
+    background-position: center;
+
+    padding-top: 40px;
+
     @include bp(tablet){
-      padding: 0 5%;
+      padding: 3% 5%;
       display: flex;
       flex-flow: row wrap;
     }
 
+    @include bp(desktop){
+      padding: 3% 12%;
+    }
+
     .title_container{
       margin-bottom: 10px;
+      order: 1;
 
       @include bp(tablet){
         width: 100%;
         margin-bottom: 50px;
       }
-
-      .title{
-
-      }
     }
 
     .body_container{
+      order: 3;
       margin-bottom: 65px;
 
       @include bp(tablet){
@@ -108,6 +133,7 @@
     }
 
     .app_display_container{
+      order: 2;
       margin-bottom: 78px;
 
       @include bp(tablet){
@@ -117,17 +143,14 @@
   }
 
   .app_links_container{
-    padding: 0 5%;
-    padding-bottom: 60px;
+    margin-top: 30px;
+    display: none;
 
-    @include bp(tablet){
-      margin: auto;
-    }
+    @include bp(desktop){
+      display: block;
 
-    .link{
-      @include bp(tablet){
-        margin: auto;
-        max-width: 500px;
+      .link{
+        
       }
     }
   }

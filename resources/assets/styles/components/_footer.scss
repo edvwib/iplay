@@ -9,23 +9,35 @@
   background-color: $color-black;
   color: #FFF;
   height: 170px;
-  padding: 20px 10%;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
 
   .menu{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 
     ul{
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
 
       li{
 
         a{
           text-decoration: none;
-          font-size: 14px;
+          font-size: 16px;
           line-height: 16px;
           color: #FFF;
+          text-transform: uppercase;
+          font-weight: 800;
+
+          @include bp(tablet){
+            font-size: 20px;
+          }
 
           &:hover{
             color: $color-green-hover;
@@ -40,7 +52,9 @@
   }
 
   .footer_social{
-    margin-top: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
@@ -48,9 +62,16 @@
     a{
       height: 50px;
 
-      img{
-        height: 100%;
+      img, svg{
+        // height: 100%;
+        width: 30px;
+        height: 30px;
+        color: $color-green;
       }
     }
+  }
+
+  .copyright{
+    align-self: center;
   }
 }

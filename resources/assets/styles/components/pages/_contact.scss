@@ -5,11 +5,44 @@
  * file that was distributed with this source code.
  */
 
+ .contact{
+  @include bp(desktop){
+    padding-top: 75px;
+
+    article{
+
+      display: flex;
+      flex-flow: row wrap;
+
+      justify-content: center;
+    }
+  }
+
+ }
+
 .contact_introduction_container{
 
   display: flex;
   flex-flow: column wrap;
-  // justify-content: center;
+
+  @include bp(tablet){
+    justify-content: center;
+    margin-top: 50px;
+
+    .title_container{
+      .title{
+        font-size: 58px;
+        text-align: center;
+      }
+    }
+  }
+
+  @include bp(desktop){
+    width: 45%;
+    margin: 0;
+
+    border-right: 2px solid #FFF;
+  }
 
   .title_container{
     padding: 0 5%;
@@ -23,8 +56,7 @@
 
       margin-top: 110px;
 
-      @include bp(tablet){
-        text-align: unset;
+      @include bp(desktop){
         margin-top: 0;
       }
     }
@@ -37,8 +69,8 @@
       width: 100%;
       max-width: 500px;
 
-      @include bp(tablet){
-
+      @include bp(desktop){
+        padding: 0 10%;
       }
     }
   }
@@ -51,6 +83,16 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+
+    @include bp(tablet){
+      flex-flow: row nowrap;
+      align-content: flex-start;
+    }
+
+    @include bp(desktop){
+      width: 80%;
+      align-self: center;
+    }
 
     a{
       text-decoration: none;
@@ -85,12 +127,18 @@
 
 
 .contact_form_container{
-  padding: 0 5%;
+  // padding: 0 5%;
   margin: 0 auto;
   margin-bottom: 50px;
 
   @include bp(tablet){
     max-width: 600px;
+  }
+
+  @include bp(desktop){
+    width: 45%;
+    margin: 0;
+    max-width: unset;
   }
 
   .title_container{
@@ -104,6 +152,7 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    padding: 0 10%;
 
     input, textarea{
       background-color: #fff;
@@ -131,10 +180,15 @@
 
 .the_team_container{
   padding: 0 7%;
+  overflow-x: hidden;
 
   @include bp(tablet){
     max-width: 600px;
     margin: 0 auto;
+  }
+
+  @include bp(desktop){
+    max-width: 800px;
   }
 
   .title_container{
@@ -147,10 +201,8 @@
   }
 
   .employee_container{
-    width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
 
     .employee{
       background-color: #252A33;
