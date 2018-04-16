@@ -8,7 +8,7 @@
 header{
   height: 70px;
   max-height: 116px;
-  background-color: $color-blue;
+  background-color: transparent;
   z-index: 1000;
 
   position: fixed;
@@ -16,6 +16,13 @@ header{
   width: 100vw;
   display: flex;
   justify-content: space-around;
+
+  will-change: background-color;
+  transition: background-color .5s;
+
+  &.scrolled{
+    background-color: $color-blue;
+  }
 
   @include bp(tablet){
     height: 100%;
@@ -25,7 +32,7 @@ header{
 
   .logo{
     margin-left: 5%;
-    height: 50%;
+    height: 60%;
     align-self: center;
     z-index: 20;
     flex: 1;
@@ -130,7 +137,7 @@ header{
     z-index: 900;
     left: 0;
     bottom: 0;
-    transform: translateY(200%);
+    transform: translateY(125%);
     transition: all .5s;
     background-color: rgba(38, 43, 52, .95);
     width: 100vw;

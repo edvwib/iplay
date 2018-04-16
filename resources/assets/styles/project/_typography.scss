@@ -19,17 +19,17 @@ main{
     &.main_title{
       font-size: 28px;
       line-height: 33px;
-      font-weight: 500;
-      letter-spacing: 1px;
+      font-weight: 800;
+      // letter-spacing: 1px;
 
       @include bp(desktop){
-        font-size: 70px;
+        font-size: 60px;
         line-height: 86px;
       }
     }
 
     &.secondary_title{
-      font-weight: 16px;
+      font-size: 16px;
       line-height: 26px;
       font-weight: 400;
 
