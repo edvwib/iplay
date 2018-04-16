@@ -73,3 +73,25 @@ function customprefix_remove_default_post_type_menu_item()
 {
     remove_menu_page('edit.php');
 }
+
+// Change default logo on admin login
+function my_login_logo()
+{
+    ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?= get_stylesheet_directory_uri(); ?>/assets/images/iplay_logo_admin.jpeg);
+            background-size: cover;
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+        /* height: 65px;
+		width: 320px;
+		background-size: 320px 65px;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px; */
+        }
+    </style>
+<?php
+}
+add_action('login_enqueue_scripts', 'my_login_logo');
