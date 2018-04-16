@@ -15,12 +15,23 @@ declare(strict_types=1);
 
     <div class="footer_social">
         <?php while (have_rows('footer_social_links', get_option('page_on_front'))): the_row(); ?>
-            <a href="<?= field('url'); ?>" title="<?= field('name'); ?>">
-                <?php $icon = field('icon'); ?>
-                <img src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>">
+            <a href="<?= field('url'); ?>" title="<?= field('name'); ?>"> <?php
+                $icon = field('icon');
+                if (field('icon')) {
+                    ?><img src="<?= $icon['sizes']['large']; ?>" alt="<?= $icon['alt']; ?>"><?php
+                } else {
+                    ?><i class="<?= field('fa_icon'); ?>"></i><?php
+                }
+
+            ?>
             </a>
         <?php endwhile; ?>
     </div>
+
+    <div class="copyright">
+        &copy; <?php echo date("Y"); ?> All rights reserved.
+    </div>
+
 </nav>
 
 
