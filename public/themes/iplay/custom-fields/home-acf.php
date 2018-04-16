@@ -88,10 +88,16 @@ $homeFields = [
                     acf_image([
                         'name' => 'icon',
                         'label' => 'Icon',
-                        'instructions' => 'This icon will be displayed on top of the card.',
+                        'instructions' => 'An icon to be displayed on the top of the card, if this is set any icon set in the next column will not be used.',
                         'required' => false,
                         'mime_types' => '.jpg, .jpeg, .png, .svg',
                         'return_value' => 'object',
+                    ]),
+                    acf_text([
+                        'name' => 'fa_icon',
+                        'label' => 'Font Awesome Icon',
+                        'instructions' => 'Here you can choose an icon from https://fontawesome.com/icons, e.g "fab fa-facebook-f" for the facebook icon.',
+                        'required' => false,
                     ]),
                     acf_text([
                         'name' => 'title',
