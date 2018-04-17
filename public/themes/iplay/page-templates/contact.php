@@ -51,9 +51,9 @@ declare(strict_types=1);
                 </div>
                 <form action="#" class="form">
                     <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email Address">
+                    <input type="email" placeholder="Email Adress">
                     <textarea name="message" rows="5" placeholder="Message"></textarea>
-                    <input type="submit" value="Send">
+                    <input type="submit" value="SEND">
                 </form>
             </div>
 
@@ -69,6 +69,7 @@ declare(strict_types=1);
                             <?php $image = field('image'); ?>
                             <img data-src="<?= $image['sizes']['large']; ?>" alt="<?= $image['alt']; ?>">
                             <p class="name"><?= field('name'); ?></p>
+                            <p class="position"><?= field('position'); ?></p>
                         </div>
                     <?php endwhile; ?>
                 </div>

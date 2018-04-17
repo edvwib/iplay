@@ -85,11 +85,6 @@ function my_login_logo()
             width: 100%;
             height: 200px;
             border-radius: 20px;
-        /* height: 65px;
-		width: 320px;
-		background-size: 320px 65px;
-		background-repeat: no-repeat;
-        	padding-bottom: 30px; */
         }
     </style>
 <?php

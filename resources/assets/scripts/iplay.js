@@ -103,7 +103,7 @@ let theTeamSwiper = new Swiper('.the_team_container', {
   pagination: {
     el: '.swiper-pagination',
     type: 'progressbar',
-    },
+  },
   lazy: true,
 });
 
@@ -124,7 +124,7 @@ let theAppSwiper = new Swiper('.frame', {
 
 // The app progressbar
 let featuresProgressContainer = document.querySelector('.features_progressbar_container');
-let featuresProgress = featuresProgressContainer.querySelector('.features_progressbar');
+let featuresProgress = document.querySelector('.features_progressbar');
 
 if(featuresProgress){
   featuresProgress.style.width = '100px';

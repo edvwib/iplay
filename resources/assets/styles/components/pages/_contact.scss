@@ -104,7 +104,7 @@
       align-items: center;
 
       .icon{
-        height: 25px;
+        height: 100%;
         margin-right: 20px;
         color: $color-green;
       }
@@ -144,7 +144,7 @@
   .title_container{
 
     .title{
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
   }
 
@@ -161,6 +161,10 @@
       padding-left: 20px;
       border: 0;
       width: 100%;
+
+      &:placeholder{
+        color: #939393;
+      }
     }
     input{
       height: 45px;
@@ -173,6 +177,10 @@
 
       &:hover{
         background-color: $color-green-hover;
+      }
+
+      &::submit{
+        font-weight: 500;
       }
     }
   }
@@ -203,11 +211,14 @@
   .employee_container{
     display: flex;
     flex-flow: row wrap;
+    margin-bottom: 30px;
 
     .employee{
       background-color: #252A33;
-      width: 45%;
-      margin-bottom: 30px;
+      // width: 45%;
+      height: 35%;
+      padding-bottom: 15px;
+      clip-path: polygon(100% 0, 100% 92%, 50% 100%, 0 92%, 0 0);
 
       &:hover{
         background-color: $color-green;
@@ -220,12 +231,24 @@
       img{
         width: 100%;
       }
-
-      .name{
+      .name, .position{
         color: $color-green;
-        margin: 10px;
+        margin: 0;
         text-align: center;
       }
+
+      .name{
+        margin-top: 15px;
+      }
+      .position{
+        font-size: 14px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+      }
     }
+  }
+
+  .swiper-pagination{
+    // height: 10px;
   }
 }
