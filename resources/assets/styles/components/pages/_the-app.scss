@@ -103,6 +103,21 @@
         background-color: $color-green;
       }
     }
+
+    .features_scroll_container{
+      width: 45%;
+      margin: 0 auto;
+      height: 8px;
+      border-radius: 4px;
+      background-color: #FFF;
+
+      .features_scroll{
+        background-color: $color-green;
+        border-radius: 4px;
+        height: 100%;
+        width: 50px;
+      }
+    }
   }
 
 

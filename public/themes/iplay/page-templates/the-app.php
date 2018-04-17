@@ -46,6 +46,9 @@ declare(strict_types=1);
                                 <div class="features_progressbar"></div>
                             </div>
                         </div>
+                        <div class="features_scroll_container">
+                            <div class="features_scroll"></div>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div><!-- /upcoming -->

@@ -127,5 +127,15 @@ let featuresProgressContainer = document.querySelector('.features_progressbar_co
 let featuresProgress = document.querySelector('.features_progressbar');
 
 if(featuresProgress){
-  featuresProgress.style.width = '100px';
+  featuresProgress.style.width = '100px'; /*Todo: calculate width*/
+}
+
+// The app scrollbar
+let appScrollbarContainer = document.querySelector('.features_scroll_container');
+if (appScrollbarContainer){
+  let appFeaturesContainer = document.querySelector('.upcoming_features_wrapper');
+  let appScrollbar = appScrollbarContainer.querySelector('features_scroll');
+
+  console.log(appFeaturesContainer.scrollTop);
+
 }
