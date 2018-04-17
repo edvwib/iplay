@@ -24,7 +24,8 @@ register_extended_post_type('Update', [
         'singular' => 'Update',
         'plural'   => 'Updates',
         'slug'     => 'update',
-    ]
+    ],
+    'menu_icon' => 'dashicons-format-aside',
 ]);
 
 register_extended_taxonomy('category', 'update', [
