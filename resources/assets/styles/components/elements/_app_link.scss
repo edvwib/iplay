@@ -62,6 +62,10 @@
         width: 100%;
         transform: skewX(23deg); /*Reset skew set in div above*/
         color: #FFF;
+
+        &.fa-google-play{
+          height: 25px;
+        }
       }
     }
 
