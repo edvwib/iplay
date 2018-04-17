@@ -23,24 +23,29 @@ declare(strict_types=1);
                 </div>
                 <?php if (have_rows('upcoming_feature_timeline')): $i = 0; ?>
                     <div class="upcoming_features_container">
-                        <?php while (have_rows('upcoming_feature_timeline')): the_row(); $i++;?>
-                            <?php $isPast = strtotime("now") > strtotime(field('date')); ?>
-                            <div class="feature_container
-                                <?= $i%2 != 0 ? 'up' : 'down'; ?>
-                                <?= $isPast ? 'green' : ''; ?>"
-                            >
-                                <?= $i%2 == 0 ? '<div class="block"></div>' : ''?>
-                                <h5 class="feature_title"><?= field('title'); ?></h5>
-                                <h6 class="feature_date"><div class="app_display_container">
-                                    <?php
-                                    $date = DateTime::createFromFormat("Y-m-d", field('date'));
-                                    echo $isPast ? 'Released ' : 'Releases ';
-                                    echo $date->format('M Y');
-                                    ?>
-                                </h6>
-                                <?= $i%2 != 0 ? '<div class="block"></div>' : ''?>
+                        <div class="upcoming_features_wrapper">
+                            <?php while (have_rows('upcoming_feature_timeline')): the_row(); $i++;?>
+                                <?php $isPast = strtotime("now") > strtotime(field('date')); ?>
+                                <div class="feature_container
+                                    <?= $i%2 != 0 ? 'up' : 'down'; ?>
+                                    <?= $isPast ? 'green' : ''; ?>"
+                                >
+                                    <?= $i%2 == 0 ? '<div class="block"></div>' : ''?>
+                                    <h5 class="feature_title"><?= field('title'); ?></h5>
+                                    <h6 class="feature_date"><div class="app_display_container">
+                                        <?php
+                                        $date = DateTime::createFromFormat("Y-m-d", field('date'));
+                                        echo $isPast ? 'Released ' : 'Releases ';
+                                        echo $date->format('M Y');
+                                        ?>
+                                    </h6>
+                                    <?= $i%2 != 0 ? '<div class="block"></div>' : ''?>
+                                </div>
+                            <?php endwhile; ?>
+                            <div class="features_progressbar_container">
+                                <div class="features_progressbar"></div>
                             </div>
-                        <?php endwhile; ?>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div><!-- /upcoming -->

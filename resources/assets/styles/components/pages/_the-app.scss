@@ -25,11 +25,11 @@
       .main_title{
         width: 90%;
         margin: 0 auto;
-        margin-top: 80px;
+        margin-top: 60px;
       }
     }
 
-    .upcoming_features_container{
+    .upcoming_features_wrapper{
       margin-top: 40px;
       margin-bottom: 40px;
       height: 139px;
@@ -37,6 +37,7 @@
       overflow-x: auto;
       max-width: 100%;
       display: flex;
+      position: relative;
 
       .feature_container{
         display: flex;
@@ -51,6 +52,9 @@
           width: 35px;
           transform: skewX(-23deg);
           background-color: gray;
+          z-index: 200;
+
+          border: 4px solid $color-blue;
         }
 
         &.up{
@@ -84,15 +88,30 @@
         }
       }
     }
+    .features_progressbar_container{
+      height: 4px;
+      width: 100%;
+      background-color: #BFC0C3;
+      position: absolute;
+      left: 0;
+      top: 48%;
+      z-index: 100;
+
+      .features_progressbar{
+        height: 100%;
+        width: 0;
+        background-color: $color-green;
+      }
+    }
   }
 
 
   .about{
     padding: 0 9%;
 
-    background-image: url('/../themes/iplay/assets/images/header-background.jpg');
-    background-size: cover;
-    background-position: center;
+    // background-image: url('/../themes/iplay/assets/images/header-background.jpg');
+    // background-size: cover;
+    // background-position: center;
 
     padding-top: 40px;
 
@@ -150,7 +169,7 @@
       display: block;
 
       .link{
-        
+
       }
     }
   }

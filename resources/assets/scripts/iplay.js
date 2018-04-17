@@ -63,7 +63,7 @@ menuButton.addEventListener('click', () => {
 });
 
 
-
+// Key points slider
 if (document.querySelector('.flickity-wrapper')) {
   let keyPointsFlick = new Flickity('.flickity-wrapper', {
     // options
@@ -95,9 +95,6 @@ if (document.querySelector('.flickity-wrapper')) {
 }
 
 
-
-
-
 // Swiper sliders
 let theTeamSwiper = new Swiper('.the_team_container', {
   slidesPerView: 2,
@@ -123,3 +120,12 @@ let theAppSwiper = new Swiper('.frame', {
   },
   lazy: true,
 });
+
+
+// The app progressbar
+let featuresProgressContainer = document.querySelector('.features_progressbar_container');
+let featuresProgress = featuresProgressContainer.querySelector('.features_progressbar');
+
+if(featuresProgress){
+  featuresProgress.style.width = '100px';
+}
